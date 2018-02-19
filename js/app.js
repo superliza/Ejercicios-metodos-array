@@ -71,7 +71,7 @@ shiftLetters('hi');
 
 var numberArray = [1,2,3,4,5,6,7,8,9,10];
 
-var evenNumbers = function(array) {
+function evenNumbers(array) {
   //Escribe tu codigo aquí.
   var pairNumbers = numberArray.filter(number => number % 2 === 0)
   console.log(pairNumbers);
@@ -85,15 +85,14 @@ evenNumbers(numberArray);
 //Ahora  manipulando el mismo array devuelve un nuevo array que contenga solo a los números impares.
 // ejem. oddNumbers([1,2,3,4,5,6,7,8,9,10]) ---> [1, 3, 5, 7, 9]
 
-var oddNumbers = function(array) {
+function oddNumbers(array) {
   //Escribe tu codigo aquí
   var unevenNumbers = numberArray.filter(oddNumber => oddNumber % 2 === 1)
   console.log(unevenNumbers);
-  //feliz y trite
 };
-
-var outputOdd = oddNumbers(numberArray);
-console.log(outputOdd); // ---> [1, 3, 5, 7, 9]
+oddNumbers(numberArray);
+// var outputOdd = oddNumbers(numberArray);
+// console.log(outputOdd); // ---> [1, 3, 5, 7, 9]
 
 
 // 6. Reducer
@@ -104,13 +103,17 @@ console.log(outputOdd); // ---> [1, 3, 5, 7, 9]
 
 Nota: Debes de hacer uso de las funciones de evenNumbers() y oddNumbers.*/
 
+// const suma = [10, 20, 30].reduce(function(a, b){return a + b});
+// console.log(suma);
+
+
 var reducer = function() {
   //Escribe tu codigo aquí
-
+  
 }
-
-var outputReducer = reducer([1,2,3,4,5,6,7,8,9]);
-console.log(outputReducer); // ---> [ 20, 25 ]
+reducer();
+// var outputReducer = reducer([1,2,3,4,5,6,7,8,9]);
+// console.log(outputReducer); // ---> [ 20, 25 ]
 
 
 // 7. arrayt with strings 'javascript'
@@ -128,6 +131,19 @@ var persons = [
   {id : 4, name : "Adam", tags : "javascript"},
   {id : 5, name : "Alex", tags : "java"}
 ];
+
+function javascript() {
+  // var arrOfArr = [];
+  var tag = persons.map(element => element["tags"]);
+    // console.log(tag);
+    var filterTag = tag.filter(x => x === "javascript");
+    console.log(filterTag);
+    // arrOfArr.push(element["tags"]);
+    // // console.log(arrOfArr);
+    // var filterTags = arrOfArr.filter(tag => tag === "javascript");
+    // console.log(filterTags);
+}
+javascript();
 
 // 8. Render in DOM
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
