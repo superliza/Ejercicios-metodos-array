@@ -74,7 +74,7 @@ var numberArray = [1,2,3,4,5,6,7,8,9,10];
 function evenNumbers(array) {
   //Escribe tu codigo aquí.
   var pairNumbers = numberArray.filter(number => number % 2 === 0)
-  console.log(pairNumbers);
+  return pairNumbers;
 };
 evenNumbers(numberArray);
 // var outputEvenNumbers = evenNumbers(numberArray);
@@ -88,7 +88,7 @@ evenNumbers(numberArray);
 function oddNumbers(array) {
   //Escribe tu codigo aquí
   var unevenNumbers = numberArray.filter(oddNumber => oddNumber % 2 === 1)
-  console.log(unevenNumbers);
+  return unevenNumbers;
 };
 oddNumbers(numberArray);
 // var outputOdd = oddNumbers(numberArray);
@@ -107,8 +107,17 @@ Nota: Debes de hacer uso de las funciones de evenNumbers() y oddNumbers.*/
 // console.log(suma);
 
 
-var reducer = function() {
+function reducer () {
   //Escribe tu codigo aquí
+  var saveTotal = new Array()
+  var myPairSum = evenNumbers(numberArray).reduce((a, b) => a + b, 0);
+  // console.log(myPairSum);
+  saveTotal.push(myPairSum);
+  
+  var myOddSum = oddNumbers(numberArray).reduce((c, d) => c + d, 0);
+  // console.log(myOddSum);
+  saveTotal.push(myOddSum);
+  console.log(saveTotal);
   
 }
 reducer();
@@ -149,11 +158,16 @@ javascript();
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las personas y todas sus propiedades */
 
-var paintPersons = function() {
-
+var paintPersons = function(array) {
+  array.forEach(element => {
+    console.log(element["id"]); 
+    console.log(element["name"]);
+    console.log(element["tags"]);
+    
+  })
 }
 
-var outputPaintPerson = paintPersons(persons);
+paintPersons(persons);
   
 // 9. Total de edad en 'años perro' 
 /*Considera la siguiente variables data. Nosotros tenmos un arreglo de objetos, cada objeto representa
@@ -208,6 +222,15 @@ function dogsAge() {
 }
 dogsAge();
 
+function dogsAgeTwo(perritos) {
+  var newArray = perritos.filter(element => {
+    return element["type"] === "dog"; 
+  }).map(element => {
+    return element["age"] * 7;  
+  }).reduce((a, b) => a + b, 0);
+  console.log(newArray); 
+}
+dogsAgeTwo(data)
 // 10. Render in DOM 
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
  cada una de las mascotas junto con todas su propiedades*/
