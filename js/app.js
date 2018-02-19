@@ -60,7 +60,7 @@ var shiftLetters = function(str) {
   })
   console.log(arrWhite.join(""));  
 }
-shiftLetters('hi');
+shiftLetters('happy');
 // var outputShiftLetters = shiftLetters('hello');
 // console.log(outputShiftLetters); // ---> "ifmmp"
 
@@ -188,6 +188,25 @@ var data = [
     type: 'dog'
   },
 ];
+
+function dogsAge() {
+  var saveAge = [];
+  data.map(element => {
+    var typeAnimal = element["type"];
+    if(typeAnimal === "dog") {
+      var ageDogs = element["age"] * 7; 
+      saveAge.push(ageDogs);
+      // console.log(saveAge); 
+      // var total = saveAge.reduce((a, b) => a + b, 0);
+      //  console.log(total); 
+    } else {
+      return false;  
+    }
+  })
+  var totalAge = saveAge.reduce((a, b) => a + b, 0);
+  console.log(totalAge);  
+}
+dogsAge();
 
 // 10. Render in DOM 
 /*Usando la data anterior y alguno de los métodos, pinta en el index.html a través del DOM
