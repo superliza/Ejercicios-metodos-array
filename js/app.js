@@ -89,7 +89,7 @@ var oddNumbers = function(array) {
   //Escribe tu codigo aquí
   var unevenNumbers = numberArray.filter(oddNumber => oddNumber % 2 === 1)
   console.log(unevenNumbers);
-  
+  //feliz y trite
 };
 
 var outputOdd = oddNumbers(numberArray);
